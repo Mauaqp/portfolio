@@ -1,0 +1,39 @@
+/* Global Styles */
+* {
+    color: white;
+}
+body {
+    margin: 0px;
+}
+main {
+    background-image: url('/img/bg.png');
+    padding: 40px;
+}
+
+.front {
+    background-color: blue;
+}
+
+.header img {
+    width: 100px;
+    padding: 10px;
+}
+/* Profile Styles */
+.profile {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile img {
+    width: 200px;
+    padding: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+}
+
+.profile hr {
+    width: 30%;
+    text-align: end;
+}
