@@ -1,12 +1,13 @@
 /* Global Styles */
 * {
+    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 body {
     margin: 0px;
 }
 main {
-    background-image: url('/img/bg.png');
+    background-image: url(../img/bg.png);
     padding: 40px;
 }
 
@@ -35,5 +36,13 @@ main {
 
 .profile hr {
     width: 30%;
-    text-align: end;
+    position: relative;
+    text-align: left;
+    background: darkorange;
+    height: 3px;
+    border: none;
+}
+
+.presentation {
+    padding: 0px 25px 0px 25px;
 }
