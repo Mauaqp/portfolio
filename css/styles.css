@@ -3,31 +3,91 @@
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
+/* Loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #f8bf05;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+  /* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
 body {
     margin: 0px;
 }
 main {
     background-image: url(../img/bg.png);
+
     padding: 40px;
 }
 
 .front {
     background-color: blue;
+    width: 70vw;
+    height: fit-content;
+    margin: auto;
+}
+
+.header {
+    width: 100%;
 }
 
 .header img {
-    width: 100px;
-    padding: 10px;
+    width: clamp(50px, 100px, 120px);
+    padding: 25px;
+
 }
 /* Profile Styles */
 .profile {
     display: flex;
     flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .profile img {
-    width: 200px;
-    padding: 10px;
+    height: auto;
+    width: 300px;
+    padding: 0px 25px 25px 25px;
+}
+
+.social-icons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-icons img {
@@ -44,5 +104,49 @@ main {
 }
 
 .presentation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     padding: 0px 25px 0px 25px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: 100px 200px;
+    place-items: center;
+}
+/* Query */
+
+@media only screen and (max-width: 1020px) {
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5px;
+    }
+    .profile img {
+        width: 1fr;
+        margin: auto;
+        padding: 0px 25px 25px 25px;
+    }
+    .social-icons{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 5px;
+        margin: auto;
+        align-items: center;
+    }
+    .social-icons img {
+        width: 30px;
+        flex: 1;
+    }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5px;
+    }
+
 }
